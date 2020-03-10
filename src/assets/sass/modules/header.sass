@@ -1,0 +1,99 @@
+.header
+    position: relative
+    &::after
+        content: ''
+        top: 0
+        left: 0
+        right: 0
+        height: 300px
+        background: $dark-background
+        position: absolute
+        z-index: -1
+.header_box
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 30px 0
+
+.header_block
+    display: flex
+    align-items: center
+    & .header_logo
+        max-width: 97px
+        width: 100%
+        margin-right: 20px
+    & .header_themes
+        margin-right: 20px
+        & .btn_sum,
+        & .btn_moon
+            background: #D9E1E8
+            box-shadow: 4px 2px 6px rgba(136, 165, 191, 0.54), -2px -1px 3px #FFFFFF
+            border-radius: 8px 0px 0px 8px
+            padding: 9px
+            cursor: pointer
+        & .btn_moon
+            border-radius: 0px 8px 8px 0px
+        & .btn_themes_active
+            box-shadow: inset 3px 3px 6px rgba(136, 165, 191, 0.48), inset -2px -1px 6px #FFFFFF
+    & .header_time
+        & p
+            font-size: 1.4rem
+        & span
+            color: $dark-color
+    & .header_buttons
+        display: flex
+        align-items: center
+        & .btn_status
+            background: linear-gradient(124.83deg, #00B047 0%, #4CD784 100%)
+            box-shadow: 4px 2px 8px rgba(136, 165, 191, 0.54), -4px -2px 8px #BEFFD8
+            border-radius: 4px
+            padding: 12px 33px
+            font-size: 1.8rem
+            color: $default-color
+            cursor: pointer
+        & .btn_lang,
+        & .btn_account,
+        & .btn_icon,
+        & .btn_menu
+            width: 50px
+            height: 50px
+            box-shadow: 4px 2px 8px rgba(136, 165, 191, 0.54), -4px -2px 8px #FFFFFF
+            border-radius: 4px
+            background: transparent
+            display: flex
+            align-items: center
+            justify-content: center
+            margin-left: 20px
+            cursor: pointer
+.burger
+    position: absolute
+    right: 0
+    top: 0
+    background: $background-burger
+    max-width: 500px
+    width: 100%
+    max-height: 770px
+    padding: 20px
+    & .burger_menu
+        display: flex
+        flex-direction: column
+        margin-top: 100px
+    & .close
+        position: absolute
+        top: 30px
+        left: 40px
+        box-shadow: 4px 2px 6px #1B2027, -4px -2px 6px #3E4551
+        border-radius: 4px
+        width: 50px
+        height: 50px
+        display: flex
+        align-items: center
+        justify-content: center
+        & span:nth-child(1),
+        & span:nth-child(2)
+            transform: rotate(135deg)
+            width: 30px
+            background: $light-color
+            height: 2px
+        & span:nth-child(2)
+            // transform: rotate(45deg)

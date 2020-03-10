@@ -1,0 +1,82 @@
+@import "utils/vars"
+@import "utils/reset"
+@import "utils/media"
+
+html
+  line-height: $mainLineHeight
+  font-size: $mainFontSize
+  color: $mainFontColor
+  height: 100%
+
+body
+  margin: 0
+  padding: 0
+  font-family: $mainFont
+  font-size: 1.6rem
+  font-weight: $mainFontWeight
+  background: $light-background
+  height: 100%
+
+*,
+*:before,
+*:after
+  box-sizing: border-box
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  margin: 0
+
+a
+  text-decoration: none
+
+ul,
+li
+  margin: 0
+  padding: 0
+  list-style-type: none
+
+section,
+.section
+  position: relative
+
+.container
+  width: 100%
+  margin: 0 auto
+  max-width: 1240px
+  padding: 0 20px
+
+#app
+  height: 100%
+
+.main_layout
+  display: flex
+  flex-direction: column
+  height: 100%
+
+.home,
+.answers,
+.affiliate-program,
+.about
+  flex-grow: 1
+  & .title
+    border-top: 1px solid #C8D1DA
+    font-weight: bold
+    font-size: 6.4rem
+    color: $dark-color
+    text-align: center
+    padding: 30px 0 0 0
+    margin: 0px 0 10px
+  & .descr
+    font-size: 1.8rem
+    text-align: center
+    color: $light-color
+    margin-bottom: 70px
+// Modules:
+@import "modules/header"
+@import "modules/affiliate-program"
+@import "modules/about"
+@import "modules/footer"
