@@ -73,11 +73,24 @@
     max-width: 500px
     width: 100%
     max-height: 770px
-    padding: 20px
+    padding: 30px 20px
     & .burger_menu
         display: flex
         flex-direction: column
         margin-top: 100px
+        & a
+            font-size: 2rem
+            color: $light-color
+            padding: 10px 20px
+            transition: 500ms ease
+            &:hover
+                color: $green-color
+                box-shadow: 4px 2px 6px #1B2027, -4px -2px 6px #3E4551
+                border-radius: 4px
+                background: $background-2A313C
+                transition: 500ms ease
+                padding: 10px 20px
+                width: max-content
     & .close
         position: absolute
         top: 30px
@@ -91,9 +104,10 @@
         justify-content: center
         & span:nth-child(1),
         & span:nth-child(2)
+            position: absolute
             transform: rotate(135deg)
             width: 30px
             background: $light-color
             height: 2px
         & span:nth-child(2)
-            // transform: rotate(45deg)
+            transform: rotate(45deg)
