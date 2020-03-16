@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer" id="footer">
+  <footer class="footer bg-background-descr" id="footer">
     <div class="container">
       <div class="footer_box">
         <div class="footer_block">

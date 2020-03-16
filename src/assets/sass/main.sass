@@ -1,11 +1,13 @@
+
+//Импорты утилит
 @import "utils/vars"
 @import "utils/reset"
+@import "utils/animate"
 @import "utils/media"
 
+//Основные стили 
 html
-  line-height: $mainLineHeight
-  font-size: $mainFontSize
-  color: $mainFontColor
+  font-size: 10px
   height: 100%
 
 body
@@ -13,8 +15,7 @@ body
   padding: 0
   font-family: $mainFont
   font-size: 1.6rem
-  font-weight: $mainFontWeight
-  background: $light-background
+  font-weight: 400
   height: 100%
 
 *,
@@ -51,32 +52,67 @@ section,
 
 #app
   height: 100%
+.app_fon
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  opacity: 0
+  z-index: -1
+  transition: 500ms ease
+.appActiveFon
+  z-index: 1
+  opacity: 0.6
+  transition: 500ms ease
 
 .main_layout
   display: flex
   flex-direction: column
-  height: 100%
-
+  min-height: 100%
+  position: relative
+  z-index: 1
 .home,
 .answers,
 .affiliate-program,
-.about
+.about,
+.news,
+.reviews,
+.status,
+.agreement
+  position: relative
   flex-grow: 1
+  z-index: 1
   & .title
     border-top: 1px solid #C8D1DA
     font-weight: bold
     font-size: 6.4rem
-    color: $dark-color
     text-align: center
     padding: 30px 0 0 0
     margin: 0px 0 10px
   & .descr
     font-size: 1.8rem
     text-align: center
-    color: $light-color
     margin-bottom: 70px
-// Modules:
+  & .title_heading
+    margin: 50px 0 20px
+    font-weight: bold
+    font-size: 36px
+    color: #363C46
+.theme-dark
+  & .dark_main_fon
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: url(assets/image/homeFon.png) center no-repeat
+    background-size: cover
+    z-index: 0
+//Импорты страниц и всплывающих окон
 @import "modules/header"
+@import "modules/about"
+@import "modules/home"
 @import "modules/affiliate-program"
 @import "modules/about"
 @import "modules/footer"

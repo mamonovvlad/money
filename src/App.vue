@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" >
     <component :is="layout">
       <router-view />
     </component>
@@ -10,7 +10,6 @@
 <script>
 import EmptyLayout from "@/layouts/EmptyLayout";
 import MainLayout from "@/layouts/MainLayout";
-
 export default {
   computed: {
     layout() {

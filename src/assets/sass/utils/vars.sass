@@ -1,20 +1,31 @@
-// Vars:
 
 // Font
 $mainFont               : 'Gotham Pro'
 
-// Size
-$mainFontColor          : #7F848C
-$mainFontSize           : 10px
-$mainFontWeight         : 400
-$mainLineHeight         : 1.4
 
-// Color
-$default-color          : #ffffff
-$light-color            : #7F848C
-$dark-color             : #363C46
-$light-background       : #E8EDF1  
-$dark-background        : #D9E1E8 
 $background-2A313C      : #2A313C
 $background-burger      : linear-gradient(134.83deg, #363C46 0%, #1D2531 100%)
-$green-color            :  #00B047 
+
+
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+.theme-light
+
+    --bg-background-main: #E8EDF1
+    --bg-background-descr: #D9E1E8
+
+    --text-copy-main: #7F848C
+    --text-copy-descr: #363C46
+    --text-copy-btngreen: #ffffff
+    
+
+.theme-dark
+
+    --bg-background-main: #180F2D
+    --bg-background-descr: #120A20
+
+    --text-copy-main: #7F848C
+    --text-copy-descr: #ffffff
+    --text-copy-btngreen: #363C46
