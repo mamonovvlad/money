@@ -28,5 +28,6 @@ export default {
 <!--Подключение стилей -->
 <style lang="sass">
 @import 'assets/css/fonts.css'
+@import 'assets/css/fontello.css'
 @import 'assets/sass/main'
 </style>

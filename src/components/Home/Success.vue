@@ -1,0 +1,64 @@
+<template>
+  <section class="success">
+    <div class="container">
+      <div class="success_box bg-background-main shadow_btn_white">
+        <div class="success_block">
+          <i class="icon-people"></i>
+          <div class="success_text">
+            <p class="success_title text-copy-descr">8766</p>
+            <p class="success_descr">Человек нам доверяют</p>
+          </div>
+        </div>
+        <div class="success_block">
+          <i class="icon-time"></i>
+          <div class="success_text">
+            <p class="success_title text-copy-descr">7:03</p>
+            <p class="success_descr">Среднее время обмена</p>
+          </div>
+        </div>
+        <div class="success_block">
+          <i class="icon-arrow"></i>
+          <div class="success_text">
+            <p class="success_title text-copy-descr">116644</p>
+            <p class="success_descr">Успешных обменов</p>
+          </div>
+        </div>
+        <div class="success_block">
+          <i class="icon-comments"></i>
+          <div class="success_text">
+            <p class="success_title text-copy-descr">689</p>
+            <p class="success_descr">Отзывов BESTCHANGE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+<style lang="sass">
+//Success
+.success_box
+  display: flex
+  align-items: baseline
+  justify-content: space-between
+  border-radius: 8px
+  overflow: hidden
+  & .success_block
+    padding: 20px 20px
+    display: flex
+    align-items: center
+    &:hover i,
+    &:hover .success_text,
+    &:hover .success_title
+      color: #fff
+      transition: 250ms ease
+  & i
+    font-size: 4rem
+    color: #00B047
+  & img
+    margin-right: 20px
+  & .success_text
+    margin-left: 20px
+  & .success_title
+    font-weight: bold
+    font-size: 3.6rem
+</style>

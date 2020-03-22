@@ -13,11 +13,13 @@ html
 body
   margin: 0
   padding: 0
-  font-family: $mainFont
+  font-family: 'Gotham Pro'
   font-size: 1.6rem
   font-weight: 400
   height: 100%
 
+*
+  transition: 100ms ease
 *,
 *:before,
 *:after
@@ -61,8 +63,9 @@ section,
   opacity: 0
   z-index: -1
   transition: 500ms ease
+  background: rgb(255,255,255)
 .appActiveFon
-  z-index: 1
+  z-index: 90
   opacity: 0.6
   transition: 500ms ease
 
@@ -72,47 +75,20 @@ section,
   min-height: 100%
   position: relative
   z-index: 1
-.home,
-.answers,
-.affiliate-program,
-.about,
-.news,
-.reviews,
-.status,
-.agreement
+.grow
   position: relative
   flex-grow: 1
-  z-index: 1
-  & .title
-    border-top: 1px solid #C8D1DA
-    font-weight: bold
-    font-size: 6.4rem
-    text-align: center
-    padding: 30px 0 0 0
-    margin: 0px 0 10px
-  & .descr
-    font-size: 1.8rem
-    text-align: center
-    margin-bottom: 70px
-  & .title_heading
-    margin: 50px 0 20px
-    font-weight: bold
-    font-size: 36px
-    color: #363C46
-.theme-dark
-  & .dark_main_fon
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    background: url(assets/image/homeFon.png) center no-repeat
-    background-size: cover
-    z-index: 0
+.title
+  border-top: 1px solid #C8D1DA
+  font-weight: bold
+  font-size: 6.4rem
+  text-align: center
+  padding: 30px 0 0 0
+  margin: 0px 0 10px
+.descr
+  font-size: 1.8rem
+  text-align: center
+  margin-bottom: 70px
+
 //Импорты страниц и всплывающих окон
-@import "modules/header"
-@import "modules/about"
-@import "modules/home"
-@import "modules/affiliate-program"
-@import "modules/about"
-@import "modules/footer"
+@import "modules/theme"

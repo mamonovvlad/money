@@ -1,10 +1,10 @@
 <template>
   <div class="header_toggle">
-    <button class="btn_sum" @click.prevent="sun" :class="{activeSun}">
-      <img src="@/assets/image/header/sum.svg" alt="sum" />
+    <button class="btn_sum bg-background-main" @click.prevent="sun" :class="{activeSun}">
+      <i class="icon-sum"></i>
     </button>
-    <button class="btn_moon" @click.prevent="dark" :class="{activeDark}">
-      <img src="@/assets/image/header/moon.svg" alt="moon" />
+    <button class="btn_moon bg-background-main" @click.prevent="dark" :class="{activeDark}">
+      <i class="icon-moon"></i>
     </button>
   </div>
 </template>
@@ -13,7 +13,7 @@
 export default {
   data() {
     return {
-      theme: "",
+      theme: "theme-liçght",
       activeSun: true,
       activeDark: false
     };
@@ -36,3 +36,22 @@ export default {
   }
 };
 </script>
+
+<style lang="sass">
+.header_toggle
+  margin-right: 20px
+  & .btn_sum,
+  & .btn_moon
+    font-size: 2.2rem
+    border-radius: 8px 0px 0px 8px
+    padding: 9px
+    cursor: pointer
+    outline: none
+    transition: 250ms ease
+  & .btn_moon
+    border-radius: 0px 8px 8px 0px
+    transition: 500ms ease
+    & .activeSun,
+    & .activeDark
+      transition: 500ms ease
+</style>

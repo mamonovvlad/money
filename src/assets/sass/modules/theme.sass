@@ -1,0 +1,124 @@
+.theme-light
+    //Home (success)
+    & .success_box
+        & .success_block:hover
+            background: linear-gradient(106.5deg, #00B047 0%, #4CD784 100%)
+            box-shadow: inset 3px 3px 12px #209E53, inset -3px -3px 12px #26E171
+    //Header кнопка status
+    & .btn_status
+        box-shadow: 4px 2px 8px rgba(136, 165, 191, 0.54), -4px -2px 8px #BEFFD8
+    & .status,
+    & .green_btn,
+        background: linear-gradient(124.83deg, #00B047 0%, #4CD784 100%)
+        &:active
+            background: linear-gradient(135.97deg, #00B047 0%, #4CD784 100%)
+            box-shadow: inset 3px 3px 12px #209E53, inset -3px -3px 12px #16C85D
+    //Header Активные кнопки 
+    & .burger_activ_btn,
+    & .account_activ_btn,
+    & .lang_activ_btn,
+    & .social_activ_btn
+        background: linear-gradient(96.02deg, #00B047 0%, #4CD784 100%)
+        box-shadow: inset 3px 3px 12px #209E53, inset -3px -3px 12px #26E171
+        color: #fff
+    //Внешняя тень
+    & .shadow_btn_white
+        box-shadow: 4px 2px 8px rgba(136, 165, 191, 0.54), -4px -2px 8px #FFFFFF
+    //Внутреняя тень
+    & .shadow_btn_white_active
+        box-shadow: inset 3px 3px 3px rgba(136, 165, 191, 0.48), inset -3px -3px 3px #FFFFFF
+
+    //Header Кнопки темы
+    & .icon-sum
+        color: #F2C94C
+    & .icon-moon
+        color: #7F848C
+    & .btn_sum
+        box-shadow: inset 4px 2px 8px rgba(136, 165, 191, 0.54),inset -4px -2px 8px #FFFFFF
+    & .btn_moon
+        box-shadow: inset 4px 2px 8px rgba(136, 165, 191, 0.54), inset 4px -2px 8px #FFFFFF
+    & .activeSun,
+    & .activeDark,
+        box-shadow: 3px 3px 6px rgba(136, 165, 191, 0.48),  -2px -1px 6px #FFFFFF
+        &:active
+            box-shadow: inset 2px 2px 3px rgba(136, 165, 191, 0.48), inset -1px -1px 3px #F5F5F5
+    //Home (info)
+    & .reviewsActiv .info_item,
+    & .newsActiw .info_item,
+    & .blogActiv .info_item
+        box-shadow: 4px 2px 8px rgba(136, 165, 191, 0.54), -4px -2px 8px #FFFFFF
+.theme-dark
+    //Кнопки темы
+    & .icon-sum
+        color: #f2c94c9e
+    & .icon-moon
+        color: #FFFFFF
+    //Кнопки header
+    & .btn_icon i
+        color: #fff
+    //Фон    
+    & .dark_main_fon
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background: url(assets/image/homeFon.png) center no-repeat
+        background-size: cover
+        z-index: 0
+    //success
+    & .success_box
+        box-shadow: 4px 2px 8px #090513, -4px -2px 8px #22173E
+    & .success_block:hover
+        background: linear-gradient(91.67deg, #00F9C9 0%, #1EE3BF 100%)
+        box-shadow: inset 3px 3px 3px #34E2C1, inset -3px -3px 3px #46FDDB
+        color: #363C46
+        transition: 250ms ease
+    & .success_block:hover .info_title
+        color: #363C46
+        transition: 250ms ease
+        & .success_title
+            font-weight: 400
+            font-family: 'GamesDaymariusv2'
+            transition: 250ms ease
+    //Тень
+    & .shadow-btn
+        box-shadow: 4px 2px 8px #090513, -4px -2px 8px #22173E
+        &:active
+            // box-shadow: inset 3px 3px 3px #090513, inset -3px -3px 3px #22173E
+    & .btn_status
+        box-shadow: 4px 2px 8px #090513, -4px -2px 8px #22173E
+    & .status
+        background: linear-gradient(93.92deg, #00F9C9 0%, #1EE3BF 100%)
+        box-shadow: inset 3px 3px 3px #34E2C1, inset -3px -3px 3px #46FDDB
+        &:active
+            background: linear-gradient(135.97deg, #00F9C9 0%, #1EE3BF 100%)
+            box-shadow: inset 3px 3px 12px #209E53, inset -3px -3px 12px #16C85D
+    & header .fon
+        display: none
+    & .btn_sum
+        box-shadow: inset 3px 3px 6px #1E2329, inset -2px -1px 6px #4B515B
+    & .btn_moon
+        box-shadow: 4px 2px 8px #090513, -4px -2px 8px #22173E
+    & .activeSun,
+    & .activeDark,
+        box-shadow: 4px 2px 8px #090513, -4px -2px 8px #22173E
+        &:active
+            box-shadow: inset 2px 2px 3px #090513, inset -1px -1px 3px #22173E
+
+    // & .social_activ,
+    // & .lang_activ_btn
+    //     box-shadow: inset 3px -3px 3px #090513, inset -3px -3px 3px #22173E
+    & .social_activ_btn
+        box-shadow: inset 3px 3px 3px #090513, inset -3px 3px 3px #22173E
+    & .account_box
+        box-shadow: 4px 0px 8px #090513, -4px 0px 8px #22173E
+    & .burger_activ_btn,
+    & .account_activ_btn
+        box-shadow: 4px 2px 8px #090513, -4px -2px 8px #22173E
+    // & .lang_activ_btn
+    //     box-shadow: inset 3px 0px 3px #090513, inset -3px 0px 3px #22173E
+    //     border-radius: 4px 4px 0 0
+    // & .lang_activ_block
+    //     box-shadow: inset 3px 0px 3px #090513, inset -3px 0px 3px #22173E
+    //     border-radius: 0 0 4px 4px

@@ -8,7 +8,16 @@
 	font-weight: bold;
 	font-style: normal;
 }
-
+@font-face {
+	font-family: 'Gotham Pro';
+	src: url('../fonts/GothamPro/GothamPro-Medium.eot');
+	src: local('../fonts/GothamPro/Gotham Pro Medium'), local('GothamPro-Medium'),
+		url('../fonts/GothamPro/GothamPro-Medium.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/GothamPro/GothamPro-Medium.woff') format('woff'),
+		url('../fonts/GothamPro/GothamPro-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
 @font-face {
 	font-family: 'Gotham Pro';
 	src: url('../fonts/GothamPro/GothamPro.eot');
@@ -19,6 +28,7 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
 @font-face {
 	font-family: 'GamesDaymariusv2';
 	src: url('../fonts/GamesDaymariusv2/GamesDaymariusv2.ttf');

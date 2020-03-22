@@ -17,3 +17,22 @@
     </div>
   </footer>
 </template>
+
+<style lang="sass">
+.footer
+  padding: 40px 0
+  position: relative
+  z-index: 0
+.footer_box
+  display: flex
+  align-items: center
+  justify-content: space-between
+.footer_block
+  display: flex
+  align-items: center
+  & .mail,
+  & .link
+    font-size: 1.4rem
+    & .link
+      margin-left: 70px
+</style>

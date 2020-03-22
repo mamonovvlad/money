@@ -13,3 +13,17 @@
     </div>
   </section>
 </template>
+
+<style lang="sass">
+.about
+  display: flex
+  flex-direction: column
+.about_box
+  display: flex
+  justify-content: center
+  height: 100%
+  align-items: center
+  & p
+    font-size: 14px
+    margin-bottom: 20px
+</style>
