@@ -61,4 +61,27 @@
   & .success_title
     font-weight: bold
     font-size: 3.6rem
+@media screen and (max-width: 1200px)
+  .success_box .success_title
+    font-size: 3rem
+  .success_descr
+    font-size: 1.4rem
+  .success_box .success_block
+    padding: 20px 12px
+@media screen and (max-width: 1024px)
+  .success_box .success_text
+    margin-left: 12px
+@media screen and (max-width: 992px)
+  .success_box
+    justify-content: space-evenly
+  .success_box .success_text
+    margin-left: 5px
+  .success_box .success_title
+    font-size: 2rem
+  .success_descr
+    font-size: 1rem
+  .success_box i
+    font-size: 3rem
+  .success_box .success_text
+    margin-left: 5px
 </style>

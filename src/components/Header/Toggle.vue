@@ -13,7 +13,7 @@
 export default {
   data() {
     return {
-      theme: "theme-liçght",
+      theme: "theme-light",
       activeSun: true,
       activeDark: false
     };
@@ -40,6 +40,7 @@ export default {
 <style lang="sass">
 .header_toggle
   margin-right: 20px
+  display: flex
   & .btn_sum,
   & .btn_moon
     font-size: 2.2rem

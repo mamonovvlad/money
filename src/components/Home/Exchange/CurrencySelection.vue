@@ -1,9 +1,9 @@
 <template>
-  <div class="currency_selection">
-    <div class="currency_selection_block shadow_btn_white bg-background-main">
-      <h2 class="title_section title_currency">Отдаёте</h2>
+  <div class="currency_selection" :class="{currencySelectionActive}" v-if="tabelShowSelection">
+    <div class="currency_selection_block shadow_btn_white bg-background-main give">
+      <h2 class="title_section title_currency" v-if="selectionBlocksActive">Отдаёте</h2>
       <div class="currency">
-        <ul class="list_currency">
+        <ul class="list_currency" v-if="selectionBlocksActive">
           <li class="active_currency">All</li>
           <li>CRYPT</li>
           <li>USD</li>
@@ -11,21 +11,23 @@
           <li>UAH</li>
           <li>CASH</li>
         </ul>
-        <div class="line"></div>
+
+        <div class="line" v-if="selectionBlocksActive"></div>
+
         <ul class="payment_system_list">
-          <li v-for="li in allGive" :key="li.id">
+          <li v-for="li in allGive" :key="li.id" @click="removeInfo">
             <div class="payment_system_name">
               <img :src="li.img" />
-              <p>{{li.title}}</p>
+              <p v-if="selectionBlocksActive">{{li.title}}</p>
             </div>
           </li>
         </ul>
       </div>
     </div>
-    <div class="currency_selection_block shadow_btn_white bg-background-main">
-      <h2 class="title_section title_currency">Получаете</h2>
+    <div class="currency_selection_block shadow_btn_white bg-background-main get">
+      <h2 class="title_section title_currency" v-if="selectionBlocksActive">Получаете</h2>
       <div class="currency">
-        <ul class="list_currency">
+        <ul class="list_currency" v-if="selectionBlocksActive">
           <li class="active_currency">All</li>
           <li>CRYPT</li>
           <li>USD</li>
@@ -33,14 +35,14 @@
           <li>UAH</li>
           <li>CASH</li>
         </ul>
-        <div class="line"></div>
+        <div class="line" v-if="selectionBlocksActive"></div>
         <ul class="payment_system_list">
-          <li v-for="li in allGive" :key="li.id">
+          <li v-for="li in allGive" :key="li.id" @click="removeInfo">
             <div class="payment_system_name">
               <img :src="li.img" />
-              <p>{{li.title}}</p>
+              <p v-if="selectionBlocksActive">{{li.title}}</p>
             </div>
-            <div class="payment_system_price">
+            <div class="payment_system_price" v-if="selectionBlocksActive">
               <p>
                 24 900
                 <span>rub</span>
@@ -50,6 +52,9 @@
         </ul>
       </div>
     </div>
+    <div class="refresh">
+      <i class="icon-refresh"></i>
+    </div>
   </div>
 </template>
 
@@ -58,6 +63,11 @@
 export default {
   data() {
     return {
+      currencySelectionActive: false,
+      selectionBlocksActive: true,
+      exchangeBlocksActive: false,
+      tabelShowSelection: true,
+      tabelShowExchange: true,
       allGive: [
         {
           title: "Bitcoin",
@@ -167,6 +177,21 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    removeInfo() {
+      if (window.innerWidth > 992) {
+        this.$emit(
+          "removeBlock",
+          (this.selectionBlocksActive = false),
+          (this.currencySelectionActive = true),
+          this.$emit("addBlock", (this.exchangeBlocksActive = true))
+        );
+      } else {
+        (this.currencySelectionActive = true),
+          (this.tabelShowSelection = false);
+      }
+    }
   }
 };
 </script>
@@ -178,8 +203,37 @@ export default {
 <style lang="sass">
 .currency_selection
   display: flex
+  max-width: 600px
+  width: 100%
+  transition: 500ms ease
+  position: relative
+  height: min-content
+  & .refresh
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    opacity: 0
+    background: linear-gradient(96.02deg, #00B047 0%, #4CD784 100%)
+    border: 4px solid #ECECEC
+    box-shadow: 4px 2px 8px rgba(136, 165, 191, 0.54), -4px -2px 8px #FFFFFF
+    width: 46px
+    height: 46px
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    transform: translate(calc( -50% - 10px ) , -50%)
+    transition: 150ms ease
+    z-index: -100
+    & i
+      display: flex
+      color: #fff
+      font-size: 1.8rem
+.currency
+  transition: 500ms ease
 .currency_selection_block
-  width: 50%
+  max-width: 50%
   flex-grow: 1
   margin-right: 20px
   border-radius: 10px
@@ -203,9 +257,11 @@ export default {
   & .payment_system_name
     display: flex
     align-items: center
+    margin-right: 5px
     & p
-      font-size: 1.4rem
+      font-size: 1.3rem
   & .line
+    width: auto
     height: 2px
     background: #DEE6EC
     margin: 0 20px 16px
@@ -228,7 +284,7 @@ export default {
       margin-right: 5px
       width: 20px
     & p
-      line-height: 10px
+      line-height: 16px
       padding-top: 4px
   & .payment_system_price
     & p
@@ -236,6 +292,7 @@ export default {
       color: #4F4F4F
       font-weight: 500
       font-size: 1.2rem
+      width: max-content
     & span
       font-size: 12px
       font-weight: 400
@@ -250,4 +307,40 @@ export default {
   box-shadow: 4px 2px 8px rgba(136, 165, 191, 0.54), -4px -2px 8px #FFFFFF
   border-radius: 4px
   color: #00B047
+.currencySelectionActive
+  position: relative
+  max-width: 180px
+  width: 100%
+  transition: 500ms ease
+  & .refresh
+    opacity: 1
+    z-index: 1
+  & .currency_selection_block .payment_system_name
+    width: 30px
+    margin-right: 0
+  & .currency_selection_block .payment_system_list li img
+    margin-right: 0
+    width: 100%
+
+@media screen and (max-width: 992px)
+  .currency_selection
+    justify-content: space-evenly
+  .currency_selection_block
+    margin-right: 10px
+    margin-left: 10px
+  .currency_selection_block
+    max-width: 300px
+    width: 100%
+    padding: 10px 0px
+  .currency_selection_block .payment_system_list li
+    padding: 7px 10px
+@media screen and (max-width: 768px)
+  .currency_selection
+    flex-direction: column
+    align-items: center
+  .currency_selection_block
+    max-width: 400px
+  .get
+    display: none
 </style>
+

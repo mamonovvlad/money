@@ -33,6 +33,19 @@
   & .mail,
   & .link
     font-size: 1.4rem
+    margin-left: 10px
     & .link
       margin-left: 70px
+@media screen and (max-width: 768px)
+  .footer
+    padding: 20px 0
+  .footer_box
+    flex-direction: column
+  .footer_block
+    justify-content: space-between
+    font-size: 1.2rem
+    width: 100%
+  .footer_block .mail, .footer_block .link
+    margin-left: 0
+    margin-top: 16px
 </style>

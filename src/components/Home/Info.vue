@@ -201,6 +201,8 @@ export default {
   transition: 500ms ease
   max-width: 800px
   width: 100%
+  &  span
+    display: block
   & .green_btn
     outline: none
     display: block
@@ -254,5 +256,30 @@ export default {
   width: 100%
   text-transform: uppercase
   font-size: 1.8rem
+@media screen and (max-width: 1200px)
+  .reviewsActiv .item_title a, .newsActiw .item_title a, .blogActiv .item_title a
+    font-size: 2rem
+  .reviewsActiv p, .reviewsActiv span, .newsActiw p, .newsActiw span, .blogActiv p, .blogActiv span
+    font-size: 1.6rem
+@media screen and (max-width: 992px)
+  .reviewsActiv .item_title a, .newsActiw .item_title a, .blogActiv .item_title a
+    font-size: 1.6rem
+  .reviewsActiv p, .reviewsActiv span, .newsActiw p, .newsActiw span, .blogActiv p, .blogActiv span
+    font-size: 1.3rem
+  .info_block
+    margin-right: 10px
+    min-width: 150px
+    & .info_item
+      padding: 6px 0
+    & .info_list
+      padding: 8px 15px
+  .green_btn
+    padding: 12px 0
+    font-size: 1.4rem
+  .reviewsActiv p, .newsActiw p, .blogActiv p
+    line-height: 20px
+  .reviewsActiv, .newsActiw, .blogActiv
+    & .info_item
+      padding: 11px
 </style>
 

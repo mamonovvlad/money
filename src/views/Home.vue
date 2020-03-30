@@ -1,9 +1,9 @@
 <template>
   <div class="home grow">
-    <Exchange />
-    <Success />
-    <Reserves />
-    <Info />
+    <Exchange @removeBlock="removeInfo" />
+    <Success :class="{dn}" />
+    <Reserves :class="{dn}" />
+    <Info :class="{dn}" />
   </div>
 </template>
 
@@ -14,13 +14,20 @@ import Success from "@/components/Home/Success";
 import Reserves from "@/components/Home/Reserves";
 export default {
   data() {
-    return {};
+    return {
+      dn: false
+    };
   },
   components: {
     Exchange,
     Info,
     Success,
     Reserves
+  },
+  methods: {
+    removeInfo() {
+      this.dn = true;
+    }
   }
 };
 </script>
@@ -30,10 +37,13 @@ export default {
 .title_heading
   margin: 50px 0 20px
   font-weight: bold
-  font-size: 36px
+  font-size: 3.6rem
   color: #363C46
 .title_section
   font-weight: bold
   font-size: 2.4rem
   color: #363C46
+@media screen and (max-width: 992px)
+  .title_heading
+    font-size: 3rem
 </style>

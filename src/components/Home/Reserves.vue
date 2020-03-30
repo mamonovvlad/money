@@ -190,4 +190,20 @@
     line-height: 15px
   & img
     margin-right: 5px
+@media screen and (max-width: 1024px)
+  .reserves_name p,
+  .reserves_item .price
+    font-size: 1.4rem
+@media screen and (max-width: 992px)
+  .reserves_box
+    padding: 20px 10px
+  .reserves_block
+    margin: 0 10px
+    &:after
+      right: -10px
+  .reserves_name p,
+  .reserves_item .price
+    font-size: 1.2rem
+  .reserves_item
+    margin-bottom: 15px
 </style>

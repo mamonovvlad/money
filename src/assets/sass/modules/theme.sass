@@ -1,4 +1,5 @@
 .theme-light
+    transition: 200ms ease
     //Home (success)
     & .success_box
         & .success_block:hover
@@ -24,6 +25,7 @@
     //Внешняя тень
     & .shadow_btn_white
         box-shadow: 4px 2px 8px rgba(136, 165, 191, 0.54), -4px -2px 8px #FFFFFF
+        outline: 0
     //Внутреняя тень
     & .shadow_btn_white_active
         box-shadow: inset 3px 3px 3px rgba(136, 165, 191, 0.48), inset -3px -3px 3px #FFFFFF
@@ -47,7 +49,9 @@
     & .newsActiw .info_item,
     & .blogActiv .info_item
         box-shadow: 4px 2px 8px rgba(136, 165, 191, 0.54), -4px -2px 8px #FFFFFF
+
 .theme-dark
+    transition: 200ms ease
     //Кнопки темы
     & .icon-sum
         color: #f2c94c9e

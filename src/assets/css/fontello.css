@@ -20,7 +20,6 @@
   }
 }
 */
-
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
   font-family: "fontello";
@@ -31,7 +30,7 @@
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
-  margin: 0;
+  margin-right: 0em;
   text-align: center;
   /* opacity: .8; */
 
@@ -39,11 +38,10 @@
   font-variant: normal;
   text-transform: none;
 
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
 
   /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
+  margin-left: 0em;
 
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */
@@ -91,6 +89,11 @@
 }
 
 /* '' */
+.icon-datainput:before {
+  content: '\e807';
+}
+
+/* '' */
 .icon-time:before {
   content: '\e808';
 }
@@ -101,3 +104,23 @@
 }
 
 /* '' */
+.icon-payment:before {
+  content: '\e80a';
+}
+
+/* '' */
+.icon-completion:before {
+  content: '\e80b';
+}
+
+/* '' */
+.icon-check:before {
+  content: '\e80c';
+}
+
+/* '' */
+.icon-refresh:before {
+  content: '\e80d';
+}
+
+/* '' */

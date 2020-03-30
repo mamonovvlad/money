@@ -24,7 +24,7 @@ export default {
       this.$emit(
         "langBtn",
         (this.lang_activ_btn = !this.lang_activ_btn),
-        (this.lang_activ_block = !this.lang_activ_block)
+        (this.lang_activ_block = !this.lang_activ_block),
       );
     }
   }
