@@ -1,6 +1,5 @@
 <template>
-  <header class="header" id="header">
-    <div class="fon bg-background-descr"></div>
+  <header class="header bg-background-descr" id="header">
     <div class="app_fon" :class="appActive"></div>
     <div class="container">
       <div class="header_box">
@@ -194,13 +193,6 @@ export default {
 <style lang="sass">
 .header
   position: relative
-  & .fon
-    top: 0
-    left: 0
-    right: 0
-    height: 300px
-    position: absolute
-    z-index: 0
 .header_box
   display: flex
   align-items: center
@@ -475,7 +467,7 @@ export default {
     display: none
   .header_buttons .account_box
     bottom: -85px
-    left: -40px
+    left: -46px
   .header_buttons .account_box .arrow
     left: 50px
   //Кнопка смена языка
@@ -530,4 +522,7 @@ export default {
       & span:nth-child(1),
       & span:nth-child(2)
         width: 25px
+@media screen and (max-width: 576px)
+  .lang img
+    width: 20px
 </style>

@@ -1,6 +1,5 @@
 <template>
   <div class="main_layout text-copy-main bg-background-main" :class="theme">
-    <div class="dark_main_fon"></div>
     <Header @sunChanged="updateTheme" @darkChanged="themeDark" />
     <router-view />
     <Footer />

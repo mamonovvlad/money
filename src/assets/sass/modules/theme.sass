@@ -1,5 +1,4 @@
 .theme-light
-    transition: 200ms ease
     //Home (success)
     & .success_box
         & .success_block:hover
@@ -51,15 +50,68 @@
         box-shadow: 4px 2px 8px rgba(136, 165, 191, 0.54), -4px -2px 8px #FFFFFF
 
 .theme-dark
-    transition: 200ms ease
+    //main_text, header
+    & .header,
+    & .main_text
+        background: transparent
+    & .gamesDaymariusv
+        font-family: 'GamesDaymariusv2'
+    //Home (info)
+    & .reviewsActiv .title_heading,
+    & .newsActiw .title_heading,
+    & .blogActiv .title_heading,
+        color: #fff
+    & .info_block
+        & .title_heading:hover
+            color: #fff
+        & .reviews_title, .news_title, .blog_title
+            &:hover
+                color: #46FDDB
+    & .reviewsActiv,
+    & .newsActiw,
+    & .blogActiv
+        & .reviews_item, .news_item, .blog_item
+            box-shadow: 4px 2px 8px #090513, -4px -2px 8px #22173E
+            background: #170D2B
+    & header .fon
+        display: none
+    & .success_box
+        & .success_block:hover
+            background: linear-gradient(91.67deg, #00F9C9 0%, #1EE3BF 100%)
+            box-shadow: inset 3px 3px 3px #34E2C1, inset -3px -3px 3px #46FDDB
+            color: #363C46
+        & .success_block:hover  p,
+        & .success_block:hover  i,
+        & .success_block:hover  .success_descr
+            color: #363C46
+    & .btn_status
+        box-shadow: inset 3px 3px 3px #34E2C1, inset -3px -3px 3px #46FDDB
+    & .status,
+    & .green_btn,
+        background: linear-gradient(93.92deg, #00F9C9 0%, #1EE3BF 100%)
+        &:active
+            background: linear-gradient(93.92deg, #1EE3BF 0%, #00F9C9 100%)
+            box-shadow: inset 3px 3px 3px #34E2C1, inset -3px -3px 3px #46FDDB
+    //Header Активные кнопки 
+    & .burger_activ_btn,
+    & .account_activ_btn,
+    & .lang_activ_btn,
+    & .social_activ_btn
+        background: linear-gradient(93.92deg, #00F9C9 0%, #1EE3BF 100%)
+        box-shadow: inset 3px 3px 3px #34E2C1, inset -3px -3px 3px #46FDDB
+        & i
+            color: #363C46
+    //Внешняя тень
+    & .shadow_btn_white
+        box-shadow: 4px 2px 8px #090513, -4px -2px 8px #22173E
+        outline: 0
+    & .shadow_btn_white_active
+        box-shadow: inset 4px 2px 8px #090513, inset -4px -2px 8px #22173E
     //Кнопки темы
     & .icon-sum
         color: #f2c94c9e
     & .icon-moon
         color: #FFFFFF
-    //Кнопки header
-    & .btn_icon i
-        color: #fff
     //Фон    
     & .dark_main_fon
         position: absolute
@@ -70,36 +122,6 @@
         background: url(assets/image/homeFon.png) center no-repeat
         background-size: cover
         z-index: 0
-    //success
-    & .success_box
-        box-shadow: 4px 2px 8px #090513, -4px -2px 8px #22173E
-    & .success_block:hover
-        background: linear-gradient(91.67deg, #00F9C9 0%, #1EE3BF 100%)
-        box-shadow: inset 3px 3px 3px #34E2C1, inset -3px -3px 3px #46FDDB
-        color: #363C46
-        transition: 250ms ease
-    & .success_block:hover .info_title
-        color: #363C46
-        transition: 250ms ease
-        & .success_title
-            font-weight: 400
-            font-family: 'GamesDaymariusv2'
-            transition: 250ms ease
-    //Тень
-    & .shadow-btn
-        box-shadow: 4px 2px 8px #090513, -4px -2px 8px #22173E
-        &:active
-            // box-shadow: inset 3px 3px 3px #090513, inset -3px -3px 3px #22173E
-    & .btn_status
-        box-shadow: 4px 2px 8px #090513, -4px -2px 8px #22173E
-    & .status
-        background: linear-gradient(93.92deg, #00F9C9 0%, #1EE3BF 100%)
-        box-shadow: inset 3px 3px 3px #34E2C1, inset -3px -3px 3px #46FDDB
-        &:active
-            background: linear-gradient(135.97deg, #00F9C9 0%, #1EE3BF 100%)
-            box-shadow: inset 3px 3px 12px #209E53, inset -3px -3px 12px #16C85D
-    & header .fon
-        display: none
     & .btn_sum
         box-shadow: inset 3px 3px 6px #1E2329, inset -2px -1px 6px #4B515B
     & .btn_moon
@@ -109,20 +131,58 @@
         box-shadow: 4px 2px 8px #090513, -4px -2px 8px #22173E
         &:active
             box-shadow: inset 2px 2px 3px #090513, inset -1px -1px 3px #22173E
-
-    // & .social_activ,
-    // & .lang_activ_btn
-    //     box-shadow: inset 3px -3px 3px #090513, inset -3px -3px 3px #22173E
-    & .social_activ_btn
-        box-shadow: inset 3px 3px 3px #090513, inset -3px 3px 3px #22173E
-    & .account_box
-        box-shadow: 4px 0px 8px #090513, -4px 0px 8px #22173E
-    & .burger_activ_btn,
-    & .account_activ_btn
+    & .currency_selection_block .line
+        background: #120A20
+    & .currency_selection_block .payment_system_list li:hover
+        background: #170D2B
+        box-shadow: inset 4px 2px 8px #090513, inset -4px -2px 8px #22173E
+        color: #1EE3BF
+    & .currency_selection_block .payment_system_price p,
+    & .reserves_item .price
+        color: #D9E1E8
+    & .inp_block
+        input
+            &:focus,
+            &:active
+                box-shadow: 4px 2px 8px #090513, -4px -2px 8px #22173E
+        & #discount
+            background: #120A20
+            box-shadow: 0 0 0 #120A20, 0px 0px 0px #120A20
+            &:focus,
+            &:active
+                box-shadow: 0 0 0 #120A20, 0px 0px 0px #120A20
+    & .form_exchange .line
+        background: #120A20
+    & .currency_exchange .green_btn
+        box-shadow: inset 3px 3px 3px #34E2C1, inset -3px -3px 3px #46FDDB
+    & .reserves_block:after
+        background: #120A20
+    & .checkbox  .checkbox_inp
+        &:before,
+        &:after
+            background: #170D2B url('assets/image/check_grey.svg') center no-repeat
+            box-shadow: 4px 2px 8px #090513, -4px -2px 8px #22173E
+        &:after
+            background: #1EE3BF url('assets/image/check.svg') center no-repeat
+    & .currency_selection .refresh
         box-shadow: 4px 2px 8px #090513, -4px -2px 8px #22173E
-    // & .lang_activ_btn
-    //     box-shadow: inset 3px 0px 3px #090513, inset -3px 0px 3px #22173E
-    //     border-radius: 4px 4px 0 0
-    // & .lang_activ_block
-    //     box-shadow: inset 3px 0px 3px #090513, inset -3px 0px 3px #22173E
-    //     border-radius: 0 0 4px 4px
+        background: linear-gradient(93.92deg, #00F9C9 0%, #1EE3BF 100%)
+        border: 4px solid #170D2B
+        & i
+            color: #363C46
+    & .btn_exchange p .course
+        color: #fff
+    //Payment    
+    & .time_box .timer_block:after
+        background: rgba(0, 0, 0, 0.3)
+    //Answers
+    & .open
+        & .answers_accordion
+            box-shadow: inset 4px 2px 8px #090513, inset -4px -2px 8px #22173E
+        & .accordion_title
+            color: #ffffff
+    //BlogArticle
+    .article_popular_box:hover
+        box-shadow: inset 4px 2px 8px #090513, inset -4px -2px 8px #22173E
+        & .popular_title
+            color: #1EE3BF

@@ -1,5 +1,6 @@
 <template>
   <div class="home grow">
+    <div class="fon bg-background-descr"></div>
     <Exchange @removeBlock="removeInfo" />
     <Success :class="{dn}" />
     <Reserves :class="{dn}" />
@@ -34,16 +35,18 @@ export default {
 
 <style lang="sass">
 //Основные стили ,страницы Home
+
 .title_heading
   margin: 50px 0 20px
   font-weight: bold
   font-size: 3.6rem
-  color: #363C46
 .title_section
   font-weight: bold
   font-size: 2.4rem
-  color: #363C46
 @media screen and (max-width: 992px)
   .title_heading
     font-size: 3rem
+@media screen and (max-width: 768px)
+  .title_section
+    font-size: 2rem
 </style>

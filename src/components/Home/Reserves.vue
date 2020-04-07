@@ -1,7 +1,7 @@
 <template>
   <section class="reserves">
     <div class="container">
-      <h2 class="title_heading">Резервы валют</h2>
+      <h2 class="title_heading text-copy-descr gamesDaymariusv">Резервы валют</h2>
       <div class="reserves_box bg-background-main shadow_btn_white">
         <div class="reserves_block">
           <div class="reserves_item">

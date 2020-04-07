@@ -48,10 +48,11 @@ section,
   width: 100%
   margin: 0 auto
   max-width: 1240px
-  padding: 0 20px
+  padding: 0 10px
 
 #app
   height: 100%
+
 .app_fon
   position: fixed
   top: 0
@@ -62,6 +63,7 @@ section,
   z-index: -1
   transition: 500ms ease
   background: rgb(255,255,255)
+
 .appActiveFon
   z-index: 90
   opacity: 0.6
@@ -73,22 +75,64 @@ section,
   min-height: 100%
   position: relative
   z-index: 1
+
 .grow
   position: relative
   flex-grow: 1
+//text
 .title
-  border-top: 1px solid #C8D1DA
   font-weight: bold
   font-size: 6.4rem
   text-align: center
   padding: 30px 0 0 0
   margin: 0px 0 10px
+
 .descr
   font-size: 1.8rem
   text-align: center
-  margin-bottom: 70px
-//Helpers
-.dn
-  display: none
+  padding-bottom: 30px
+//fon
+.fon
+  top: 0px
+  left: 0
+  right: 0
+  height: 200px
+  position: absolute
+  z-index: -1
+//main_text
+.main_text
+  border-top: 1px solid #C8D1DA
+  padding: 0 10px
+
+//button
+.show_more
+  padding: 17px 20px 15px
+  max-width: 380px
+  width: 100%
+  margin: 0 auto
+  display: block
+  border-radius: 8px
+  & i
+    margin-right: 5px
 //Импорты страниц и всплывающих окон
 @import "modules/theme"
+
+@media screen and (max-width:992px)
+  .title
+    font-size: 3.5rem
+  .descr
+    font-size: 1.6rem
+@media screen and (max-width: 768px)
+  .fon
+    height: 100px
+  .descr
+    font-size: 1.8rem
+    padding-bottom: 20px
+  .title
+    font-size: 3rem
+    padding: 20px 0 0 0
+@media screen and (max-width:576px)
+  .title
+    font-size: 2.4rem
+  .descr
+    font-size: 1.4rem

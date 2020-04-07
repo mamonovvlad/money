@@ -1,10 +1,10 @@
 <template>
   <div class="currency_selection" :class="{currencySelectionActive}" v-if="tabelShowSelection">
     <div class="currency_selection_block shadow_btn_white bg-background-main give">
-      <h2 class="title_section title_currency" v-if="selectionBlocksActive">Отдаёте</h2>
+      <h2 class="title_section title_currency text-copy-descr gamesDaymariusv" v-if="selectionBlocksActive">Отдаёте</h2>
       <div class="currency">
         <ul class="list_currency" v-if="selectionBlocksActive">
-          <li class="active_currency">All</li>
+          <li class="active_currency text-copy-green shadow_btn_white bg-background-main">All</li>
           <li>CRYPT</li>
           <li>USD</li>
           <li>RUB</li>
@@ -25,10 +25,13 @@
       </div>
     </div>
     <div class="currency_selection_block shadow_btn_white bg-background-main get">
-      <h2 class="title_section title_currency" v-if="selectionBlocksActive">Получаете</h2>
+      <h2
+        class="title_section title_currency text-copy-descr gamesDaymariusv"
+        v-if="selectionBlocksActive"
+      >Получаете</h2>
       <div class="currency">
         <ul class="list_currency" v-if="selectionBlocksActive">
-          <li class="active_currency">All</li>
+          <li class="active_currency text-copy-green shadow_btn_white bg-background-main">All</li>
           <li>CRYPT</li>
           <li>USD</li>
           <li>RUB</li>
@@ -67,7 +70,6 @@ export default {
       selectionBlocksActive: true,
       exchangeBlocksActive: false,
       tabelShowSelection: true,
-      tabelShowExchange: true,
       allGive: [
         {
           title: "Bitcoin",
@@ -188,8 +190,13 @@ export default {
           this.$emit("addBlock", (this.exchangeBlocksActive = true))
         );
       } else {
-        (this.currencySelectionActive = true),
-          (this.tabelShowSelection = false);
+        this.$emit(
+          "removeBlock",
+          (this.selectionBlocksActive = false),
+          (this.currencySelectionActive = true),
+          (this.tabelShowSelection = false),
+          this.$emit("addBlock", (this.exchangeBlocksActive = true))
+        );
       }
     }
   }
@@ -303,10 +310,7 @@ export default {
   box-shadow: inset 3px 3px 3px rgba(136, 165, 191, 0.48), inset -3px -3px 3px #FFFFFF
   color: #00B047
 .active_currency
-  background: #E8EDF1
-  box-shadow: 4px 2px 8px rgba(136, 165, 191, 0.54), -4px -2px 8px #FFFFFF
   border-radius: 4px
-  color: #00B047
 .currencySelectionActive
   position: relative
   max-width: 180px
@@ -331,7 +335,7 @@ export default {
   .currency_selection_block
     max-width: 300px
     width: 100%
-    padding: 10px 0px
+    padding: 15px 0px
   .currency_selection_block .payment_system_list li
     padding: 7px 10px
 @media screen and (max-width: 768px)

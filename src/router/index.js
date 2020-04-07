@@ -116,6 +116,14 @@ const routes = [{
     },
     component: () => import('@/views/SuccessfulPayment.vue')
   },
+  {
+    path: '/status-check',
+    name: 'status-check',
+    meta: {
+      layout: 'main'
+    },
+    component: () => import('@/views/StatusCheck.vue')
+  },
 
 ]
 

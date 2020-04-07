@@ -124,3 +124,38 @@
 }
 
 /* '' */
+.icon-arrow-1:before {
+  content: '\e80e';
+}
+
+/* '' */
+.icon-vector:before {
+  content: '\e80f';
+}
+
+/* '' */
+.icon-castle:before {
+  content: '\e810';
+}
+
+/* '' */
+.icon-credit-card:before {
+  content: '\e811';
+}
+
+/* '' */
+.icon-time-1:before {
+  content: '\e812';
+}
+
+/* '' */
+.icon-check-1:before {
+  content: '\e813';
+}
+
+/* '' */
+.icon-cancel:before {
+  content: '\e814';
+}
+
+/* '' */

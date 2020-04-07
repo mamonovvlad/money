@@ -14,6 +14,8 @@ module.exports = {
                 main: 'var(--text-copy-main)',
                 descr: 'var(--text-copy-descr)',
                 btngreen: 'var(--text-copy-btngreen)',
+                green: 'var(--text-copy-green)',
+                blue: 'var(--text-copy-blue)',
             },
         },
     },

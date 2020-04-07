@@ -3,41 +3,31 @@
     <div class="container">
       <div class="info_box">
         <div class="info_block" :class="{reviewsActiv}">
-          <h2 class="title_heading" @click="reviewsToggle">Отзывы</h2>
+          <h2 class="title_heading gamesDaymariusv text-copy-main" @click="reviewsToggle">Отзывы</h2>
           <div class="info_list">
-            <div class="info_item" v-for="info_item in reviews" :key="info_item.id">
-              <div class="item_title">
-                <a href="#">{{ info_item.title }}</a>
-                <span>2 дня назад</span>
-              </div>
-              <p>{{ info_item.descr }}</p>
+            <div class="info_items bg-background-descr">
+              <ReviewsItems v-for="reviews_item in 4" :key="reviews_item.index" />
+              <button class="shadow_btn_white green_btn text-copy-btngreen">Читать все отзывы</button>
             </div>
           </div>
-          <button class="green_btn text-copy-btngreen">Читать все отзывы</button>
         </div>
         <div class="info_block" :class="{newsActiw}">
-          <h2 class="title_heading" @click="newsToggle ">Новости</h2>
+          <h2 class="title_heading gamesDaymariusv text-copy-main" @click="newsToggle ">Новости</h2>
           <div class="info_list">
-            <div class="info_item" v-for="info_item in news" :key="info_item.id">
-              <div class="item_title">
-                <a href="#">{{ info_item.title }}</a>
-              </div>
-              <p>{{ info_item.descr }}</p>
+            <div class="info_items bg-background-descr">
+              <NewsItems v-for="info_item in 4" :key="info_item.index" />
+              <button class="shadow_btn_white green_btn text-copy-btngreen">Читать все отзывы</button>
             </div>
           </div>
-          <button class="green_btn text-copy-btngreen">Читать все отзывы</button>
         </div>
         <div class="info_block" :class="{blogActiv}">
-          <h2 class="title_heading" @click="blogToggle">Блог</h2>
+          <h2 class="title_heading gamesDaymariusv text-copy-main" @click="blogToggle ">Блог</h2>
           <div class="info_list">
-            <div class="info_item" v-for="info_item in blog" :key="info_item.id">
-              <div class="item_title">
-                <a href="#">{{ info_item.title}}</a>
-              </div>
-              <p>{{ info_item.descr}}</p>
+            <div class="info_items bg-background-descr">
+              <BlogItems v-for="blog_item in 4" :key="blog_item.index" />
+              <button class="shadow_btn_white green_btn text-copy-btngreen">Читать все отзывы</button>
             </div>
           </div>
-          <button class="green_btn text-copy-btngreen">Читать все отзывы</button>
         </div>
       </div>
     </div>
@@ -45,85 +35,16 @@
 </template>
 
 <script>
+import NewsItems from "@/components/News/NewsItems";
+import ReviewsItems from "@/components/Reviews/ReviewsItems";
+import BlogItems from "@/components/Blog/BlogItems";
 export default {
   name: "Info",
   data() {
     return {
       reviewsActiv: true,
       newsActiw: false,
-      blogActiv: false,
-      reviews: [
-        {
-          title: "Антон",
-          descr:
-            "Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову"
-        },
-        {
-          title: "Петя",
-          descr:
-            " Его многочисленные, убого тонкие по сравнению с остальным телом ножки беспомощно копошились"
-        },
-        {
-          title: "Геня",
-          descr:
-            " Его комната, настоящая, разве что слишком маленькая, но обычная комната, мирно покоилась в своих четырех хорошо знакомых стенах."
-        },
-        {
-          title: "Витя",
-          descr:
-            "Над столом, где были разложены распакованные образцы сукон – Замза был коммивояжером, – висел портрет, который он недавно вырезал из иллюстрированного журнала"
-        }
-      ],
-      news: [
-        {
-          title: "Душа моя озарена неземной радостью",
-          descr:
-            "Как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я."
-        },
-        {
-          title: "Я так счастлив, мой друг, так упоен ощущением покоя",
-          descr:
-            "Что искусство мое страдает от этого. Ни одного штриха не мог бы я сделать, а никогда не был таким большим художником, как в эти минуты."
-        },
-        {
-          title:
-            "Когда от милой моей долины поднимается пар и полдневное солнце стоит",
-          descr:
-            "Над непроницаемой чащей темного леса и лишь редкий луч проскальзывает в его святая святых, а я лежу в высокой траве у быстрого ручья."
-        },
-        {
-          title:
-            "Прильнув к земле, вижу тысячи всевозможных былинок и чувствую",
-          descr:
-            "Эти неисчислимые, непостижимые разновидности червяков и мошек и чувствую близость всемогущего, создавшего нас по своему подобию, веяние вселюбящего."
-        }
-      ],
-      blog: [
-        {
-          title:
-            "Его многочисленные, убого тонкие по сравнению с остальным телом ножки беспомощно",
-          descr:
-            "Копошились у него перед глазами. «Что со мной случилось?» – подумал он. Это не было сном. Его комната, настоящая"
-        },
-        {
-          title:
-            "Разве что слишком маленькая, но обычная комната, мирно покоилась в своих четырех хорошо",
-          descr:
-            "Над столом, где были разложены распакованные образцы сукон – Замза был коммивояжером, – висел портрет, который он недавно вырезал"
-        },
-        {
-          title:
-            "На портрете была изображена дама в меховой шляпе и боа, она сидела очень прямо",
-          descr:
-            "Протягивала зрителю тяжелую меховую муфту, в которой целиком исчезала ее рука. Затем взгляд Грегора устремился в окно"
-        },
-        {
-          title:
-            "На портрете была изображена дама в меховой шляпе и боа, она сидела очень прямо",
-          descr:
-            "Протягивала зрителю тяжелую меховую муфту, в которой целиком исчезала ее рука. Затем взгляд Грегора устремился в окно"
-        }
-      ]
+      blogActiv: false
     };
   },
   methods: {
@@ -142,6 +63,11 @@ export default {
         (this.newsActiw = false),
         (this.blogActiv = true);
     }
+  },
+  components: {
+    NewsItems,
+    ReviewsItems,
+    BlogItems
   }
 };
 </script>
@@ -156,130 +82,145 @@ export default {
   flex-grow: 1
   min-width: 190px
   max-width: 190px
-  margin-right: 20px
+  &:nth-child(2)
+    margin: 0 20px
+  & .title_heading
+    cursor: pointer
+    transition: 0.3s ease
+    &:hover
+      transition: 0.3s ease
+      color: #363C46
+  & .line
+    display: none
   & .green_btn
     display: none
-  & .title_heading
-    color: #7F848C
-    transition: 250ms ease
-    cursor: pointer
-    &:hover
-      color: #363C46
-      transition: 250ms ease
-  & .info_list
-    background: #D9E1E8
-    padding: 12px 20px
+  & .info_items
+    padding: 10px 15px
     border-radius: 8px
-  & .info_item
-    padding: 12px 0
-    position: relative
+  & .reviews_item, .news_item, .blog_item
+    box-shadow: unset
+    background: transparent
     border-bottom: 1px solid #C7D0D8
-    &:last-child
+    padding: 7px 0
+    margin: 0 0px 0 0px
+    &:nth-child(4)
       border-bottom: 0px
-  & .item_title a
-    color: #363C46
+  & .item_box
+    margin-bottom: 0px
+  & .reviews_title, .news_title, .blog_title
     font-size: 1.2rem
+    font-weight: 500
+    font-size: 1.1rem
+    margin-bottom: 5px
     display: -webkit-box
     overflow: hidden
     -webkit-line-clamp: 1
     -webkit-box-orient: vertical
+    transition: 0.3s ease
+    cursor: pointer
     &:hover
+      transition: 0.3s ease
       color: #00B047
-  & p
+  & .reviews_date, .news_date, .blog_date, .views, .blog_img
+    display: none
+  & .reviews_descr, .news_descr, .blog_descr
     font-size: 1.1rem
-    text-overflow: ellipsis
     display: -webkit-box
     overflow: hidden
-    -webkit-line-clamp: 3
+    -webkit-line-clamp: 4
     -webkit-box-orient: vertical
-  & span
-    display: none
 
 .reviewsActiv,
 .newsActiw,
 .blogActiv
+  margin: 0
   transition: 500ms ease
   max-width: 800px
   width: 100%
-  &  span
-    display: block
-  & .green_btn
-    outline: none
-    display: block
   & .title_heading
     color: #363C46
-
-  & .info_list
+  & .info_items
+    padding: 0
+    margin-right: 0px
+    border-radius: unset
     display: flex
     flex-wrap: wrap
-    align-items: center
     justify-content: space-between
-    background: #E8EDF1
-    padding: 0
-  & .info_item
-    border-bottom: 0px
-    width: 48%
-    box-shadow: 4px 2px 8px rgba(136, 165, 191, 0.54), -4px -2px 8px #FFFFFF
+    background: transparent
+  & .reviews_item, .news_item, .blog_item
+    width: calc(50% - 10px)
+    margin: 0 0px 20px 0
+    padding: 20px
     border-radius: 10px
-    padding: 18px
-    margin: 0 0px 20px
-  & .item_title
-    display: flex
-    justify-content: space-between
-    align-items: center
-    margin-bottom: 9px
-    & a
-      font-size: 2.4rem
-      color: #363C46
-      font-weight: normal
-      line-height: 28px
-      display: -webkit-box
-      overflow: hidden
-      -webkit-line-clamp: 1
-      -webkit-box-orient: vertical
-  & p,
-  & span
+    box-shadow: 4px 2px 8px rgba(136, 165, 191, 0.54), -4px -2px 8px #FFFFFF
+    background: #E8EDF1
+    border-bottom: 0px
+  & .reviews_title, .news_title, .blog_title
+    font-size: 2.4rem
+    font-weight: 500
+  & .reviews_date,
+  & .reviews_descr, .news_descr, .blog_descr
     font-size: 1.8rem
-  & p
-    overflow: hidden
-    position: relative
-    text-overflow: ellipsis
+  & .reviews_descr, .news_descr, .blog_descr
     display: -webkit-box
+    overflow: hidden
     -webkit-line-clamp: 3
     -webkit-box-orient: vertical
-    line-height: 25px
+  & .reviews_date,
+  & .green_btn
+    display: block
+
 //btn
 .green_btn
-  box-shadow: 4px 2px 8px rgba(136, 165, 191, 0.54), -4px -2px 8px #BEFFD8
   border-radius: 8px
   padding: 17.5px 0
   width: 100%
   text-transform: uppercase
   font-size: 1.8rem
+
 @media screen and (max-width: 1200px)
-  .reviewsActiv .item_title a, .newsActiw .item_title a, .blogActiv .item_title a
-    font-size: 2rem
-  .reviewsActiv p, .reviewsActiv span, .newsActiw p, .newsActiw span, .blogActiv p, .blogActiv span
-    font-size: 1.6rem
-@media screen and (max-width: 992px)
-  .reviewsActiv .item_title a, .newsActiw .item_title a, .blogActiv .item_title a
-    font-size: 1.6rem
-  .reviewsActiv p, .reviewsActiv span, .newsActiw p, .newsActiw span, .blogActiv p, .blogActiv span
-    font-size: 1.3rem
-  .info_block
-    margin-right: 10px
-    min-width: 150px
-    & .info_item
-      padding: 6px 0
-    & .info_list
-      padding: 8px 15px
+  .info_block .reviews_descr, .info_block .news_descr, .info_block .blog_descr
+    display: -webkit-box
+    overflow: hidden
+    -webkit-line-clamp: 3
+  .reviewsActiv,
+  .newsActiw,
+  .blogActiv
+    & .reviews_item, .news_item, .blog_item
+      margin: 0 0px 16px 0
+      padding: 15px
+    & .reviews_title, .news_title, .blog_title
+      font-size: 2rem
+    & .reviews_date,
+    & .reviews_descr, .news_descr, .blog_descr
+      font-size: 1.6rem
   .green_btn
-    padding: 12px 0
-    font-size: 1.4rem
-  .reviewsActiv p, .newsActiw p, .blogActiv p
-    line-height: 20px
-  .reviewsActiv, .newsActiw, .blogActiv
-    & .info_item
-      padding: 11px
+    padding: 18px 0 14px
+    font-size: 1.5rem
+@media screen and (max-width: 992px)
+  .info_block
+    transition: 500ms ease
+    flex-grow: 1
+    min-width: 140px
+    & .reviews_descr, .news_descr, .blog_descr
+      display: -webkit-box
+      overflow: hidden
+      -webkit-line-clamp: 2
+    & .info_items
+      padding: 7px 9px
+  .reviewsActiv,
+  .newsActiw,
+  .blogActiv
+    & .info_items
+      padding: 0
+    & .reviews_item, .news_item, .blog_item
+      margin: 0 0px 16px 0
+      padding: 15px
+    & .reviews_title, .news_title, .blog_title
+      font-size: 1.8rem
+      margin-bottom: 3px
+    & .reviews_date,
+    & .reviews_descr, .news_descr, .blog_descr
+      font-size: 1.4rem
 </style>
 

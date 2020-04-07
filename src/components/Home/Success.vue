@@ -3,30 +3,30 @@
     <div class="container">
       <div class="success_box bg-background-main shadow_btn_white">
         <div class="success_block">
-          <i class="icon-people"></i>
+          <i class="icon-people text-copy-green"></i>
           <div class="success_text">
-            <p class="success_title text-copy-descr">8766</p>
+            <p class="success_title gamesDaymariusv text-copy-descr">8766</p>
             <p class="success_descr">Человек нам доверяют</p>
           </div>
         </div>
         <div class="success_block">
-          <i class="icon-time"></i>
+          <i class="icon-time text-copy-green"></i>
           <div class="success_text">
-            <p class="success_title text-copy-descr">7:03</p>
+            <p class="success_title gamesDaymariusv text-copy-descr">7:03</p>
             <p class="success_descr">Среднее время обмена</p>
           </div>
         </div>
         <div class="success_block">
-          <i class="icon-arrow"></i>
+          <i class="icon-arrow text-copy-green"></i>
           <div class="success_text">
-            <p class="success_title text-copy-descr">116644</p>
+            <p class="success_title gamesDaymariusv text-copy-descr">116644</p>
             <p class="success_descr">Успешных обменов</p>
           </div>
         </div>
         <div class="success_block">
-          <i class="icon-comments"></i>
+          <i class="icon-comments text-copy-green"></i>
           <div class="success_text">
-            <p class="success_title text-copy-descr">689</p>
+            <p class="success_title gamesDaymariusv text-copy-descr">689</p>
             <p class="success_descr">Отзывов BESTCHANGE</p>
           </div>
         </div>
@@ -53,7 +53,6 @@
       transition: 250ms ease
   & i
     font-size: 4rem
-    color: #00B047
   & img
     margin-right: 20px
   & .success_text
