@@ -52,7 +52,24 @@ section,
 
 #app
   height: 100%
-
+  position: relative
+  display: flex
+  flex-direction: column
+  & .ps__rail-x:hover,
+  & .ps__rail-y:hover,
+  & .ps__rail-x:focus,
+  & .ps__rail-y:focus,
+  & .ps__rail-x.ps--clicking,
+  & .ps__rail-y.ps--clicking
+    background-color: transparent
+    opacity: 0.9
+  & .ps__rail-y:hover > .ps__thumb-y,
+  & .ps__rail-y:focus > .ps__thumb-y,
+  & .ps__rail-y.ps--clicking .ps__thumb-y
+    background: linear-gradient(96.02deg, #00B047 0%, #4CD784 100%)
+    width: 5px
+  & .ps__thumb-y
+    background: linear-gradient(96.02deg, #00B047 0%, #4CD784 100%)
 .app_fon
   position: fixed
   top: 0
@@ -69,15 +86,17 @@ section,
   opacity: 0.6
   transition: 500ms ease
 
-.main_layout
+.main_layout,
+.cabinet_layout
   display: flex
   flex-direction: column
-  min-height: 100%
+  height: 100%
   position: relative
-  z-index: 1
+  z-index: 0
 
 .grow
   position: relative
+  z-index: 1
   flex-grow: 1
 //text
 .title
@@ -114,6 +133,10 @@ section,
   border-radius: 8px
   & i
     margin-right: 5px
+//Scroll
+.main_scroll
+  height: 100%
+
 //Импорты страниц и всплывающих окон
 @import "modules/theme"
 

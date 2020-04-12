@@ -1,5 +1,5 @@
 <template>
-  <div class="successful grow">
+  <div class="successful grow bg-background-main">
     <div class="fon bg-background-descr"></div>
     <div class="container">
       <div class="successful_box text-copy-descr grow bg-background-main shadow_btn_white">

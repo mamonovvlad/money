@@ -1,5 +1,5 @@
 <template>
-  <section class="about grow" id="about">
+  <section class="about grow bg-background-main" id="about">
     <div class="main_text bg-background-descr">
       <h1 class="title text-copy-descr gamesDaymariusv">О нас</h1>
       <p class="descr text-copy-main">Тут текст по типу “Вот почему мы намбер ван”</p>

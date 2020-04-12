@@ -1,5 +1,5 @@
 <template>
-  <div class="status_page grow">
+  <div class="status_page grow bg-background-main">
     <div class="main_text bg-background-descr">
       <h1 class="title text-copy-descr gamesDaymariusv">Проверить статус операции</h1>
       <p

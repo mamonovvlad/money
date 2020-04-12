@@ -24,7 +24,11 @@
             <div class="btn_status bg-background-status">
               <button class="status text-copy-btngreen">Проверить статус операции</button>
             </div>
-            <Lang @langBtn="langBtn = $emit" />
+            <Lang
+              @langBtn="langBtn"
+              :lang_activ_btn="lang_activ_btn"
+              :lang_activ_block="lang_activ_block"
+            />
             <div class="icon shadow_btn_white bg-background-main">
               <button class="btn_icon" @click="accountBtn" :class="{account_activ_btn}">
                 <i class="icon-account"></i>
@@ -34,8 +38,8 @@
                 :class="{account_active}"
               >
                 <div class="arrow"></div>
-                <router-link class="text-copy-main" to="/entrance">Вход</router-link>
-                <router-link class="text-copy-main" to="/registration">Регистрация</router-link>
+                <button class="text-copy-main" @click="entrance">Вход</button>
+                <button class="text-copy-main" @click="registration">Регистрация</button>
               </div>
             </div>
             <div
@@ -56,63 +60,96 @@
               <button class="btn_icon" @click="burgerToggle" :class="{burger_activ_btn}">
                 <i class="icon-menu"></i>
               </button>
+
               <div class="burger" :class="{burger_activ}">
-                <div class="burger_content">
-                  <Toggle class="burger_toggle" @sunChanged="updateTheme" @darkChanged="themeDark" />
-                  <div class="close" @click="closeBtn">
-                    <div class="close_btn">
-                      <span class="text-copy-main"></span>
-                      <span class="text-copy-main"></span>
+                <perfect-scrollbar class="scroll">
+                  <div class="burger_content">
+                    <Toggle
+                      class="burger_toggle"
+                      @sunChanged="updateTheme"
+                      @darkChanged="themeDark"
+                    />
+                    <div class="close" @click="closeBtn">
+                      <div class="close_btn">
+                        <span class="text-copy-main"></span>
+                        <span class="text-copy-main"></span>
+                      </div>
+                    </div>
+                    <div class="burger_menu">
+                      <router-link to="/">Обменять</router-link>
+                      <router-link to="/news">Новости</router-link>
+                      <router-link to="/faq">FAQ</router-link>
+                      <router-link to="/reviews">Отзывы</router-link>
+                      <router-link to="/affiliate-program">Партнерская программа</router-link>
+                      <router-link to="/status">Проверить статус операции</router-link>
+                      <router-link to="/how-exchange">Как обменять</router-link>
+                      <router-link to="/agreement">Соглашение</router-link>
+                      <router-link to="/rules">Правила</router-link>
+                      <router-link to="/security">Безопасность</router-link>
                     </div>
                   </div>
-                  <div class="burger_menu">
-                    <router-link to="/">Обменять</router-link>
-                    <router-link to="/news">Новости</router-link>
-                    <router-link to="/faq">FAQ</router-link>
-                    <router-link to="/reviews">Отзывы</router-link>
-                    <router-link to="/affiliate-program">Партнерская программа</router-link>
-                    <router-link to="/status">Проверить статус операции</router-link>
-                    <router-link to="/how-exchange">Как обменять</router-link>
-                    <router-link to="/agreement">Соглашение</router-link>
-                    <router-link to="/rules">Правила</router-link>
-                    <router-link to="/security">Безопасность</router-link>
-                  </div>
-                </div>
-                <SocialNetwork class="burger_social" />
+                  <SocialNetwork class="burger_social" />
+                </perfect-scrollbar>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <Authorization
+      :class="{showEntrance}"
+      @entrance="{activeEntrance}"
+      @closeModal="showEntrance = !showEntrance"
+      @addClassEntrance="entrance"
+      @addClassRegistration="registration"
+      @openPasswordRecovery="showPasswordRecovery"
+      :activeEntrance="activeEntrance"
+      :activeRegistration="activeRegistration"
+    />
+    <PasswordRecovery :recovery="recovery" @closeModal="recovery = false" />
   </header>
 </template>
 
 <script>
+import { PerfectScrollbar } from "vue2-perfect-scrollbar";
+import Authorization from "@/components/Header/Authorization";
+import PasswordRecovery from "@/components/Header/Authorization/PasswordRecovery";
 import Toggle from "@/components/Header/Toggle";
 import Lang from "@/components/Header/Lang";
 import SocialNetwork from "@/components/Header/SocialNetwork";
 export default {
   data: function() {
     return {
+      appActiveFon: false,
+      //Время
       date: new Date(),
       interval: null,
       theme: "theme-light",
+      //бургер меню
       burger_activ: false,
       burger_activ_btn: false,
+      //соц сети
       social_activ: false,
       social_activ_btn: false,
+      //
+      lang_activ_btn: false,
+      lang_activ_block: false,
+      //вход / регистрация
       account_active: false,
       account_activ_btn: false,
-      appActiveFon: false
-      // lang_activ_btn: false,
-      // lang_activ_block: false
+      showEntrance: false,
+      activeEntrance: false,
+      activeRegistration: false,
+      recovery: false
     };
   },
   components: {
     Toggle,
     Lang,
-    SocialNetwork
+    SocialNetwork,
+    Authorization,
+    PasswordRecovery,
+    PerfectScrollbar
   },
   computed: {
     appActive: function() {
@@ -168,7 +205,7 @@ export default {
         (this.lang_activ_btn = false),
         (this.lang_activ_block = false);
     },
-    //Открыть окна входа,регистрации
+    //Открыть вход,регистрация
     accountBtn() {
       (this.account_active = !this.account_active),
         (this.account_activ_btn = !this.account_activ_btn),
@@ -177,11 +214,34 @@ export default {
         (this.lang_activ_btn = false),
         (this.lang_activ_block = false);
     },
+    //Открыть смену языка
     langBtn() {
-      (this.social_activ = false),
-        (this.social_activ_btn = false),
-        (this.account_activ_btn = false),
-        (this.account_active = false);
+      this.lang_activ_btn = !this.lang_activ_btn;
+      this.lang_activ_block = !this.lang_activ_block;
+      this.social_activ_btn = false;
+      this.account_activ_btn = false;
+      this.account_active = false;
+    },
+    //Открыть окно регистрации
+    registration() {
+      this.showEntrance = true;
+      this.activeEntrance = false;
+      this.activeRegistration = true;
+      this.account_active = false;
+      this.account_activ_btn = false;
+    },
+    //Открыть окно входа
+    entrance() {
+      this.showEntrance = true;
+      this.activeEntrance = true;
+      this.activeRegistration = false;
+      this.account_active = false;
+      this.account_activ_btn = false;
+    },
+    //Открыть окно смена пароля
+    showPasswordRecovery() {
+      this.recovery = true;
+      this.showEntrance = false;
     }
   },
   beforeDestroy() {
@@ -302,7 +362,7 @@ export default {
     position: absolute
     bottom: -95px
     display: flex
-    left: 0px
+    left: -16px
     flex-direction: column
     padding: 20px 20px 10px 20px
     border-radius: 4px
@@ -310,21 +370,23 @@ export default {
     z-index: -3
     & .arrow
       position: absolute
-      left: 20px
+      left: 34px
       top: -18px
       border: 8px solid transparent
       border-bottom: 10px solid #e8edf1
-      & a
-        font-size: 1.8rem
-        margin-bottom: 10px
+    & button
+      font-size: 1.8rem
+      text-align: left
+      margin-bottom: 10px
+      outline: none
 
   & .account_active
     opacity: 1
-    z-index: 1
+    z-index: 2
   & .lang_activ_block
     top: 49px
     opacity: 1
-    z-index: 1
+    z-index: 2
 
   & .btn_lang
     width: 50px
@@ -338,14 +400,14 @@ export default {
   display: flex
   flex-direction: column
   bottom: 0
-  overflow-y: scroll
   background:
   max-width: 500px
   width: 100%
-  padding: 30px 20px
   background: linear-gradient(134.83deg, #363C46 0%, #1D2531 100%)
   transition: 250ms ease
   z-index: -100
+  & .burger_content
+    padding: 30px 20px 0
   & .burger_toggle
     display: none
   & .burger_menu
@@ -389,10 +451,14 @@ export default {
       &:active
         box-shadow: inset 2px 2px 3px #1B2027, inset -1px -1px 3px #3E4551
         border-radius: 4px
+  & .burger_social
+    margin: 30px 0px 30px 30px
 .burger_activ
   right: 0
   transition: 250ms ease
   z-index: 100
+.showEntrance
+  display: flex
 @media screen and (max-width: 1200px)
   .header_buttons .btn_status,
   .header_buttons .icon
@@ -452,10 +518,12 @@ export default {
     & a
       font-size: 1.4rem
   .header_buttons .account_box
-    padding: 15px 18px 15px 18px
+    padding: 15px 18px 5px 18px
   .header_buttons .account_box
-    bottom: -85px
-    left: -10px
+    bottom: -90px
+    left: -29px
+  .header_buttons .account_box .arrow
+    left: 40px
 @media screen and (max-width: 768px)
   .header_buttons .btn_status,
   .header_buttons  .social,
@@ -466,10 +534,9 @@ export default {
   .info
     display: none
   .header_buttons .account_box
-    bottom: -85px
-    left: -46px
+    left: -73px
   .header_buttons .account_box .arrow
-    left: 50px
+    left: 83px
   //Кнопка смена языка
   .header_buttons .lang_box
     position: initial
@@ -478,8 +545,11 @@ export default {
     z-index: 0
   //Бургер меню
   .burger
-    max-width: 260px
-    padding: 30px 8px 15px 8px
+    max-width: 300px
+    & .burger_content
+      padding: 30px 8px 0px 8px
+    & .burger_social
+      margin: 15px 0px 0px 18px
     & .header_toggle
       display: block
       margin-right: 0

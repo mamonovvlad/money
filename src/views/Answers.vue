@@ -1,5 +1,5 @@
 <template>
-  <div class="answers grow">
+  <div class="answers grow bg-background-main">
     <div class="main_text bg-background-descr">
       <h1 class="title text-copy-descr gamesDaymariusv">Вопрос-Ответ</h1>
       <p
@@ -111,7 +111,7 @@ export default {
 
 <style lang="sass">
 .answers
-  margin-bottom: 60px
+  padding-bottom: 60px
 .answers_box
   margin-top: 60px
   display: flex

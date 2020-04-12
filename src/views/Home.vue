@@ -1,5 +1,5 @@
 <template>
-  <div class="home grow">
+  <div class="home grow bg-background-main">
     <div class="fon bg-background-descr"></div>
     <Exchange @removeBlock="removeInfo" />
     <Success :class="{dn}" />
@@ -35,7 +35,6 @@ export default {
 
 <style lang="sass">
 //Основные стили ,страницы Home
-
 .title_heading
   margin: 50px 0 20px
   font-weight: bold

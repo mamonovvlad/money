@@ -124,6 +124,14 @@ const routes = [{
     },
     component: () => import('@/views/StatusCheck.vue')
   },
+  {
+    path: '/accounts',
+    name: 'accounts',
+    meta: {
+      layout: 'cabinet'
+    },
+    component: () => import('@/views/Accounts.vue')
+  },
 
 ]
 

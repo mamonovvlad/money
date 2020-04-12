@@ -1,5 +1,5 @@
 <template>
-  <div class="error grow">
+  <div class="error grow bg-background-main">
     <div class="fon bg-background-descr"></div>
     <div class="container">
       <div class="error_box text-copy-descr grow bg-background-main shadow_btn_white">
@@ -37,7 +37,7 @@ export default {
 
 <style lang="sass">
 .error
-  margin-bottom: 60px
+  padding-bottom: 60px
 .error_box
   padding: 30px 0 60px
   border-radius: 10px

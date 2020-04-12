@@ -1,5 +1,5 @@
 <template>
-  <div class="engineering grow">
+  <div class="engineering grow bg-background-main">
     <div class="container">
       <div class="engineering_box">
         <div class="engineering_text">

@@ -1,5 +1,5 @@
 <template>
-  <section class="affiliate_program grow" id="affiliate_program">
+  <section class="affiliate_program grow bg-background-main" id="affiliate_program">
     <div class="main_text bg-background-descr">
       <h1 class="title text-copy-descr gamesDaymariusv">Партнерская программа</h1>
       <p

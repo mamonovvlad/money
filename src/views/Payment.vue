@@ -1,5 +1,5 @@
 <template>
-  <div class="payment grow">
+  <div class="payment grow bg-background-main">
     <div class="fon bg-background-descr"></div>
     <div class="container">
       <div class="payment_box shadow_btn_white">

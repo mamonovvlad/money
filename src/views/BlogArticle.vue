@@ -1,5 +1,5 @@
 <template>
-  <div class="article grow">
+  <div class="article grow bg-background-main">
     <div class="main_text bg-background-descr">
       <div class="container article_header">
         <div class="article_header_text">

@@ -1,5 +1,5 @@
 <template>
-  <div class="blog grow">
+  <div class="blog grow bg-background-main">
     <div class="main_text bg-background-descr">
       <h1 class="title text-copy-descr gamesDaymariusv">Блог</h1>
       <p class="descr text-copy-main">Тут текст по типу “Посление события нашего сервиса”</p>

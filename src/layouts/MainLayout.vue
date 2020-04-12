@@ -1,8 +1,8 @@
 <template>
-  <div class="main_layout text-copy-main bg-background-main" :class="theme">
-    <Header @sunChanged="updateTheme" @darkChanged="themeDark" />
-    <router-view />
-    <Footer />
+  <div class="main_layout text-copy-main bg-background-main">
+      <Header @sunChanged="updateTheme" @darkChanged="themeDark" />
+      <router-view />
+      <Footer />
   </div>
 </template>
 
@@ -18,17 +18,14 @@ export default {
   },
   components: {
     Header,
-    Footer
-  },
-  mounted() {
-    this.theme = localStorage.getItem("theme") || "theme-light";
+    Footer,
   },
   methods: {
     updateTheme() {
-      this.theme = "theme-light";
+      this.$emit("theme_light");
     },
     themeDark() {
-      this.theme = "theme-dark";
+      this.$emit("theme_dark");
     }
   }
 };
